@@ -1,13 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your message! We'll get back to you shortly.");
+    setShowConfirmation(true);
   };
 
   return (
     <div className="flex-1 w-full max-w-[1280px] mx-auto flex flex-col px-4 md:px-10 py-6 md:py-10 gap-8">
+      {/* Confirmation Dialog Modal */}
+      {showConfirmation && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-[#1a2e22] rounded-2xl shadow-2xl max-w-md w-full p-8 flex flex-col items-center text-center transform scale-100 animate-in zoom-in-95 duration-200 border border-border-light dark:border-border-dark relative">
+            <button 
+              onClick={() => setShowConfirmation(false)}
+              className="absolute top-4 right-4 text-secondary-text-light dark:text-gray-400 hover:text-text-light dark:hover:text-white transition-colors"
+            >
+              <span className="material-symbols-outlined">close</span>
+            </button>
+            <div className="size-16 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-6">
+              <span className="material-symbols-outlined text-4xl">check_circle</span>
+            </div>
+            <h3 className="text-2xl font-black text-text-light dark:text-white mb-2">Request Received!</h3>
+            <p className="text-secondary-text-light dark:text-gray-300 mb-8 leading-relaxed">
+              Thank you for your appointment request! We have received your details and will be in touch shortly to confirm your booking.
+            </p>
+            <button 
+              onClick={() => setShowConfirmation(false)}
+              className="w-full py-3.5 rounded-xl bg-primary hover:bg-primary-hover text-[#0d1b12] font-bold text-lg transition-colors shadow-lg shadow-primary/20"
+            >
+              Okay, great!
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Header Image */}
       <div className="w-full">
         <div className="relative overflow-hidden rounded-xl h-[250px] md:h-[320px] bg-cover bg-center shadow-lg" 
@@ -77,43 +106,61 @@ const Contact: React.FC = () => {
         <div className="lg:col-span-7 flex flex-col gap-6">
           <div className="bg-white dark:bg-[#1a2e22] rounded-xl p-6 md:p-8 border border-border-light dark:border-border-dark shadow-sm">
             <h3 className="text-xl font-bold text-text-light dark:text-white mb-6 flex items-center gap-2">
-              <span className="material-symbols-outlined text-primary">edit_note</span>
-              Send us a Message
+              <span className="material-symbols-outlined text-primary">calendar_month</span>
+              Book an Appointment
             </h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <label className="flex flex-col flex-1">
                   <span className="text-text-light dark:text-white text-sm font-medium mb-2">Name</span>
-                  <input className="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white placeholder:text-gray-400" placeholder="Your Full Name" type="text" />
+                  <input className="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white placeholder:text-gray-400" placeholder="Your Full Name" type="text" required />
                 </label>
                 <label className="flex flex-col flex-1">
                   <span className="text-text-light dark:text-white text-sm font-medium mb-2">Email Address</span>
-                  <input className="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white placeholder:text-gray-400" placeholder="name@example.com" type="email" />
+                  <input className="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white placeholder:text-gray-400" placeholder="name@example.com" type="email" required />
                 </label>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <label className="flex flex-col flex-1">
                   <span className="text-text-light dark:text-white text-sm font-medium mb-2">Phone Number</span>
-                  <input className="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white placeholder:text-gray-400" placeholder="(239) 000-0000" type="tel" />
+                  <input className="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white placeholder:text-gray-400" placeholder="(239) 000-0000" type="tel" required />
                 </label>
                 <label className="flex flex-col flex-1">
                   <span className="text-text-light dark:text-white text-sm font-medium mb-2">Service Needed</span>
-                  <select className="form-select w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white">
+                  <select className="form-select w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white" required>
                     <option disabled selected value="">Select a service</option>
                     <option value="maintenance">Lawn Maintenance</option>
                     <option value="design">Landscape Design</option>
                     <option value="sod">Sod Installation</option>
+                    <option value="commercial">Commercial/HOA</option>
                     <option value="other">Other Inquiry</option>
                   </select>
                 </label>
               </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <label className="flex flex-col flex-1">
+                  <span className="text-text-light dark:text-white text-sm font-medium mb-2">Preferred Date</span>
+                  <input className="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white placeholder:text-gray-400" type="date" />
+                </label>
+                <label className="flex flex-col flex-1">
+                  <span className="text-text-light dark:text-white text-sm font-medium mb-2">Preferred Time</span>
+                  <select className="form-select w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white">
+                    <option value="" disabled selected>Select a time</option>
+                    <option value="morning">Morning (8am - 12pm)</option>
+                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                    <option value="evening">Evening (4pm - 6pm)</option>
+                  </select>
+                </label>
+              </div>
+
               <label className="flex flex-col w-full">
-                <span className="text-text-light dark:text-white text-sm font-medium mb-2">How can we help?</span>
-                <textarea className="form-textarea w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark min-h-[120px] p-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white placeholder:text-gray-400 resize-y" placeholder="Tell us about your project..."></textarea>
+                <span className="text-text-light dark:text-white text-sm font-medium mb-2">Additional Details</span>
+                <textarea className="form-textarea w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark min-h-[120px] p-4 focus:border-primary focus:ring-primary dark:focus:border-primary text-text-light dark:text-white placeholder:text-gray-400 resize-y" placeholder="Tell us about your project or specific requirements..."></textarea>
               </label>
               <button type="submit" className="mt-2 flex w-full md:w-auto self-start items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-[#0d1b12] font-bold hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all transform active:scale-95">
-                Send Message
-                <span className="material-symbols-outlined text-[20px]">send</span>
+                Request Appointment
+                <span className="material-symbols-outlined text-[20px]">calendar_add_on</span>
               </button>
             </form>
           </div>

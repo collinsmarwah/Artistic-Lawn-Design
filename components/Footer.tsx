@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -27,29 +27,30 @@ const Footer: React.FC = () => {
             </div>
             <div className="flex flex-col gap-4">
               <h3 className="text-text-light dark:text-text-dark font-bold">Company</h3>
-              <Link to="/about" className="text-secondary-text-light dark:text-secondary-text-dark text-sm hover:text-primary">About Us</Link>
-              <Link to="#" className="text-secondary-text-light dark:text-secondary-text-dark text-sm hover:text-primary">Careers</Link>
+              <Link to="/contact" className="text-secondary-text-light dark:text-secondary-text-dark text-sm hover:text-primary">About Us</Link>
+              <Link to="/client-portal" className="text-secondary-text-light dark:text-secondary-text-dark text-sm hover:text-primary">Client Portal</Link>
+              <Link to="/contact" className="text-secondary-text-light dark:text-secondary-text-dark text-sm hover:text-primary">Careers</Link>
               <Link to="/contact" className="text-secondary-text-light dark:text-secondary-text-dark text-sm hover:text-primary">Contact</Link>
             </div>
             <div className="flex flex-col gap-4">
               <h3 className="text-text-light dark:text-text-dark font-bold">Contact</h3>
               <div className="flex items-center gap-2 text-secondary-text-light dark:text-secondary-text-dark text-sm">
                 <span className="material-symbols-outlined text-base">location_on</span>
-                <span>Cape Coral, FL 33990</span>
+                <span>2119 NE 13th Pl, Cape Coral, FL 33909</span>
               </div>
               <div className="flex items-center gap-2 text-secondary-text-light dark:text-secondary-text-dark text-sm">
                 <span className="material-symbols-outlined text-base">phone</span>
-                <span>(239) 555-0123</span>
+                <span>(239) 699-7323</span>
               </div>
               <div className="flex items-center gap-2 text-secondary-text-light dark:text-secondary-text-dark text-sm">
                 <span className="material-symbols-outlined text-base">mail</span>
-                <span>hello@artisticlawn.com</span>
+                <span>Aldincorporated@aol.com</span>
               </div>
             </div>
           </div>
         </div>
         <div className="border-t border-border-light dark:border-border-dark pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-secondary-text-light dark:text-secondary-text-dark text-xs">© 2024 Artistic Lawn Design. All rights reserved.</p>
+          <p className="text-secondary-text-light dark:text-secondary-text-dark text-xs">© 2026 Artistic Lawn Design. All rights reserved.</p>
           <div className="flex gap-4">
             <a className="text-secondary-text-light dark:text-secondary-text-dark hover:text-primary" href="#"><span className="material-symbols-outlined">public</span></a>
             <a className="text-secondary-text-light dark:text-secondary-text-dark hover:text-primary" href="#"><span className="material-symbols-outlined">share</span></a>

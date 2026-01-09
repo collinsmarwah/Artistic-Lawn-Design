@@ -12,62 +12,104 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 1,
     category: "Garden Design",
-    title: "Cape Coral Waterfront Oasis",
-    location: "Yacht Club Area",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCPS8uwPQvbVJHGgBkpDYO-dmRwlLsbkA50RI2ToFbT0uH-lQ3kJ_5sg5HNsqsti4pwfMIOb0JeMSlVzSjYkQoQUA11v5rDc03zysp5kKWz3fALR9XrdwYCCmX2qAAMHO7O_P-id5Jwql9yJF5cSWvLXrnxAKoByn3TRQ9NhYaf5HWhMPukmtGlHOQmiWR76cPqpRXMN6URNhWRz1FoI5UyUSdu6B1gQtewW8AaN_-waV-_4U907CBm7XZtKxzJCOl2G1I8WvTHeWRO"
+    title: "Tropical Paradise Renovation",
+    location: "Cape Harbour",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767970646/481993189_1090906752837516_3754865196813272728_n_ewttup.jpg"
   },
   {
     id: 2,
-    category: "Shrub Sculpting",
-    title: "Geometric Topiary Art",
-    location: "Pelican Blvd",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDe5fnt7d6cLqL_osAckIX1elzJbSZgCWHRerrd2rKc0CwtFn_KttHgFKaKqoSvcyETspTOicgxmz8SLdNYD8kGsngB964N1Cq4xuQAkV-z06MnSO--X_pPo_iaIfz4bqFq17FspZbmHJOXzS--KFeoeKRxKJIpPmuuNgAJxgoJMAAVwC3i2VIWA3CtpYWO2aMGpou2UfyZ11n0EHBRrW_J1beAWeLfVzOiHZ-0Afdr75Dm5pI0vVK_qg_QewaIbY66niZe7PUQHyWf"
+    category: "Lawn Care",
+    title: "Estate Maintenance",
+    location: "Sandoval",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971054/85046189_2810265645725083_8996269954542075904_n_f76h4n.jpg"
   },
   {
     id: 3,
-    category: "Lawn Care",
-    title: "Pristine St. Augustine",
-    location: "Matlacha",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD27deaTinTD5cd70IimCw5dYJOrMZdQyM_mcXu9Zf0H3Mlxn2Gn1QPMKiTaeTcyTMQaN0Z2DHA0CLrv7smQx-4jKQozH6FiZsoga2iKDfuy5M7_-9vO5nEk5eCZQYMO_43DxowmcJJ35EFG4JB8r8pVxLJAYWC5fEUy-JPLc6SP25xL5TmdE3k-Vy3anXkLriozbMSRD3pdneVuPSljhuKijsAF06jLSEWt22mS1PjsRpvFiTa1ZTKX2te476cwMPfnhJeU63ZW4uQ"
+    category: "Shrub Sculpting",
+    title: "Precision Hedge Trimming",
+    location: "Pelican Blvd",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971055/84321353_2810265599058421_8085542398786011136_n_rxztpj.jpg"
   },
   {
     id: 4,
-    category: "Hardscaping",
-    title: "Stone Walkway Integration",
-    location: "Tarpon Point",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD3XS6QdaaVPbzkND3EloIpUZu02gvDarjbgLP7uewlmF6kfi2GzZjB827bSaqBGjWxPdZK8Sn5ScJIlNS5kHzmXL-4yGTfG3JIsONsMfq12nbudfdZbUQoPYdPiLY_VPaJa6Cf9w8vDiy3Ya17oCuwmujWoasmrhyWYkC6YNuJpfSIiIYmillqUJBnuCAfnGJELS3YRNuFURSN-DSF9ApjGBKaBydU_xkIj2uzxuJyv_bohCJ-J1qBsRbZjI-r9gaen6TH5LBlsQdp"
+    category: "Garden Design",
+    title: "Native Flora Installation",
+    location: "Matlacha",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971057/83823927_2810265529058428_3578001589165621248_n_q9pfhi.jpg"
   },
   {
     id: 5,
-    category: "Lawn Care",
-    title: "Estate Maintenance",
-    location: "Sandoval Community",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBv_k_LT6JmdEWY6Gz4zr_En4t4zz-6Mr0MejGWRyVBn4gJtCnPcsrMeNdNisUMZAdZ53TAWzkZ3BT7Wd6sNnNogSmajS7Sik0CWQeHrt0i2pGix4hBe3fEdDGL9fuasjxwJMQ-I8uGI_xPHkItw-J4oaXcTVEbEMQEJmwgBe23xWJhDDY7oeAHNgRGlxSxhao0q4_57yO67pLs9zcRSPU7qBTAm-trUKybYupCRFMoRGzHINwAR6IJebMEXWc-Wdxa8Na3UjxsaCUy"
+    category: "Hardscaping",
+    title: "Custom Stone Walkway",
+    location: "Tarpon Point",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971060/86492285_2810265485725099_6219512132401102848_n_ujtgpc.jpg"
   },
   {
     id: 6,
-    category: "Garden Design",
-    title: "Native Florida Flora",
-    location: "Downtown Cape Coral",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD-kqE9tz0xPTmVdLAsx4zOZJ-mybRu5K3ERbdl1FleGJIeAkmgVn30ykhAmM73RHSqzOHy5sYc5KgVrVACowAeljPgyKYh2V_cTYtAE84kynFaxisum2yLP16GHXwYZ-r4wQ7dNvfevYD2T-o8Gn_hivTcPYaKyuwl3XDm5WQ4BTL_DU7YHAdN4qOeg__O9iFd8HYf7YR5KCkrRAmWwrEgIg-Xji9OUBNLZ2uJb0y5ZgZ5qLrGQDPpHTVXW0D8KbEs5sWAhN1Nry0K"
+    category: "Lawn Care",
+    title: "Lush Green Lawn",
+    location: "Yacht Club Area",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971064/481954778_1090906759504182_5487957953504105314_n_nuebdo.jpg"
   },
-   {
+  {
     id: 7,
-    category: "Hardscaping",
-    title: "Modern Patio Design",
-    location: "Marina South",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAc_oxUBozIetrhLlMIYKCKpnmGbs7YFV3YnhPk2cs4fqZX5SlOftORk_xS2TSbVmTyUyh-x5DmscBmV6cEmoAmiu4NYmni4dYUA6vEJ_9dfyK0mhm_FjelKmCY1Y1CffTeRj0aOu86aXzPxrlbm8RkkQ9X093hjTPNPRCAkLkcfQMlW3j4ZvpVYNKeltgjCskPTJOQ_te2ejoBWS84m2G5R3P2euQSahfWxQ8uAo52hb9_rfFGbk_V4z1kYbZzUTlIzfLNZnaMOuls"
+    category: "Shrub Sculpting",
+    title: "Ornamental Pruning",
+    location: "Coral Lakes",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971074/548385625_1237677334827123_8814828653210111932_n_npswel.jpg"
   },
-   {
+  {
     id: 8,
     category: "Garden Design",
-    title: "Xeriscape Minimalism",
-    location: "Cape Harbour",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBke4NmJI3dfMGMWJs-uDR418EvDENlP_B3yDt16uvIS4RxveLcFVS03FEWrUMGfM5-TEoWplf309pKrFGQAgDzWygqdub8gMnEnFSZ3ZA5DfDxQThWc87du7N57e2aaULrfwaoEJnvTpFR3vt_7ZGpbYYfwWqunpfjMOUHR_686rwZkhkrpWo9VQTVYnjFgDJjb3ePravOFfsPW0HB4jT16vT46cdbl8epoeHp9npuWO86QDAjabs1tY2hrDFzjqZWnYiGoRQcreBz"
+    title: "Backyard Oasis",
+    location: "Four Mile Cove",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971109/550373701_1237677371493786_8627624471374581683_n_uar5wm.jpg"
+  },
+  {
+    id: 9,
+    category: "Lawn Care",
+    title: "Seasonal Cleanup",
+    location: "Diplomat",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971131/486170361_1100343645227160_7146043491379100156_n_lsrdfv.jpg"
+  },
+  {
+    id: 10,
+    category: "Hardscaping",
+    title: "Patio Renovation",
+    location: "Marina South",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971136/485383464_1100343605227164_7265756103165678832_n_blelxa.jpg"
+  },
+  {
+    id: 11,
+    category: "Shrub Sculpting",
+    title: "Detailed Hedge Work",
+    location: "Bella Vida",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971149/485971890_1100343598560498_7265301424192927451_n_nl2voj.jpg"
+  },
+  {
+    id: 12,
+    category: "Garden Design",
+    title: "Waterfront Landscaping",
+    location: "Gold Coast",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971182/484072534_1098854998709358_525433394536148887_n_zrqsiz.jpg"
+  },
+  {
+    id: 13,
+    category: "Lawn Care",
+    title: "Commercial Maintenance",
+    location: "Del Prado",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971192/485085811_1098855185376006_790989444625117452_n_xdqdzd.jpg"
+  },
+  {
+    id: 14,
+    category: "Hardscaping",
+    title: "Retaining Wall & Bed",
+    location: "Trafalgar",
+    image: "https://res.cloudinary.com/dldtmvsow/image/upload/v1767971213/481993667_1090906756170849_4716643319486575274_n_miedl9.jpg"
   }
 ];
 
-const categories = ["All Projects", "Lawn Care", "Shrub Sculpting", "Hardscaping", "Garden Design", "Lighting"];
+const categories = ["All Projects", "Lawn Care", "Shrub Sculpting", "Hardscaping", "Garden Design"];
 
 const Portfolio: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All Projects");

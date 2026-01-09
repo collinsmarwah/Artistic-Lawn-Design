@@ -1,41 +1,42 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const reviews = [
   {
-    name: "Mike Thompson",
-    date: "1 week ago",
-    text: "I got quotes from three different companies in Cape Coral, and these guys had the fairest pricing for the quality of work provided. Highly recommend their bi-weekly service.",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDjGkzVE0VB7RAZTi8y9nsgVzkhiRzQCJ6cFjILLwvp4_yDWhUrZGp9-WB0Z63zi7JFTwro5OZ70i4WqKIfrb-wdE9P76DyrRxw899k_q7tDXeIqsrzyiSvCey2aVTlkkNoy-gDUoQao5YsOKMu-zbBkOPNCxWlRt53OAHC-5EdtNfLRc4jbpuqr8lyxskqeojtBliFT1xToDPxqh3gZyrC8r56PM9Jhh63xCkxoKCLGJr53m37H8gC874A3aLGonIzPeuZnV6du4nk"
+    name: "William Fike",
+    date: "8 months ago",
+    text: "Johnny has been providing with lawn service for my house and my neighbors house for years. I am always completely satisfied with with his crew's work. Whether it is just cutting the grass or trimming trees, he is prompt, affordable, and professional.",
+    initial: "W"
   },
   {
-    name: "Linda Baker",
-    date: "2 weeks ago",
-    text: "Very professional team. They wear clean uniforms, are polite, and always clean up after themselves. They even blew the leaves off my patio furniture!",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDUzYuqHBL1Whw6eOyaRwIhIDXbFY_PlcwFpIPgKFZkDMeh5exoo07mqlJuYIIiBncwfup-AM6yMCHUTPYCx_Qn3X604lGyyx88loHRFB5N4kt6eMEKvCuYXU71jozWgqlzHqm2cgY4Op58CPynNO8xGfjm1JFcl9HAZEc6R10i5jRAV3uPKVy_qegstNMhW6vmUH08Dol3iBq_xA6u69RdSMeXlLMp3LewlHpH6LT7a_OIGpG3AImH7OwMlsdYRQqJcG0Fq2uvdoIp"
+    name: "Douglas Toms",
+    date: "4 years ago",
+    text: "Johnny does excellent work, fair pricing and very dependable. He does our private home and also our condo association. Thanks Johnny",
+    initial: "D"
   },
   {
-    name: "Carlos Rodriguez",
-    date: "1 month ago",
-    text: "They did a fantastic job with our landscape redesign. The plants they chose are perfect for the Florida climate. My yard is the envy of the block now.",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCqt3aO3RVT9AI1KZFkfXHbM2qP03pfRIxm2s8fwKXjVqvqgDGXTadVg-f7g_fE73axOTpchTMKc6Dn2VLpMnFyXdUOjMZD7RUuawKyKRjI475UxHydwR_eCVUkDSQ_RZ52n-w0taFP261jwA6psY-ZBgbQ6WZXFC3NSaG85ZlEdoPbo2-Q6vf0Y0QOGOyl306Cj19CY9NOWy_zsAOOTkCEjh-W2o8B1DkcIO_43b89jCPKQoeo41ZyldC6ejWx3tCNbLyC2-euI8Ug"
+    name: "Darlene Long",
+    date: "1 year ago",
+    text: "Dependable, fair. Stuck with me when I was getting credit card hacked. Good company",
+    initial: "D"
   },
   {
-    name: "Emily White",
-    date: "1 month ago",
-    text: "Dependable and honest. Had a small issue with a sprinkler head and they fixed it immediately without charge. That kind of service is rare these days.",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBE5KIzX3AXmv7rc0KfuX6cxSYhE1yAXvm6GnkcoArgmpVQ9Aa8iiXtGbDBCwMbE1YsujxGkgR_EVqbMYgPGy5dKcKOWZ95QxANiwYFji2FrQYW17rf0Mj_pHENa-xw_lfBopklwvPyWr2xHJxzHJFEgcyWzie5ARlakLOJcxthHYadWeqgdgymDjGqpIMogEj9_eGRrCn8Tx_VW9jrSxldMZB_qJSHd0yZKRZ3UqYPa5yFRyZCIrhM1_o-0WcuUAp9bJCBDrxTtaJG"
+    name: "Cape Coral Resident",
+    date: "2 years ago",
+    text: "Review rated 5 stars.",
+    initial: "C"
   },
   {
-    name: "David King",
-    date: "2 months ago",
-    text: "Great service overall. Sometimes hard to reach via phone during peak season, but they always respond to emails quickly. Lawn looks great and pricing is solid.",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn408SkAJZaCvMtjLA8V-jUMV5U5GsEJjDhxHhTILZ5uVP4_s1tuRjYQTymPWfL_tup1NGSyiTBf2p3abe5RCwW-ji5lBvi4-TNzlngPOCwGafxd-1nRy6WRPfmEveoMjcMxawa_FpNSZwzEcbZeIlmip-C7JkiLWY9pVqkXfwMNeIO27RrlBxXmDP5lBr8Q95lQXTG-4ziAOVawne9nwcdFi5oK4omI4Bl3MYIRr9vHm0MlvzWvtVa_q8qEUpc4VnRAsXpUNvWi57"
+    name: "Cape Coral Resident",
+    date: "3 years ago",
+    text: "Review rated 5 stars.",
+    initial: "C"
   },
   {
-    name: "Jennifer Lopez",
-    date: "3 months ago",
-    text: "We switched to Artistic Lawn Design after our previous gardener retired. Best decision we made. They are thorough and careful around my flower beds.",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBe7irEbW1OM607O3DVs1v0BefM1_ogCM0BbTe5-LwU26Nw4snBAUNHExnbwJfFTqepd78bppuz27Gup7T0LdcWUuRD5-VW3-ChBkA4IBmR9MAvfsQ3si3c-_2DrWOd_9ojPuB4WGthue6YFvCSka9AcZIfQRuBLsgPI0Py1zEgThEr1dJixWVqVSYNqiH6b4f8X8dpcJHSPNS1-aApzavbYsWUlJXH9IB6uI-lQ8uWMi571Pfzi7aBqJalwYSyKMwECpkkGMKLQrHM"
+    name: "Cape Coral Resident",
+    date: "3 years ago",
+    text: "Review rated 5 stars.",
+    initial: "C"
   }
 ];
 
@@ -56,12 +57,12 @@ const Testimonials: React.FC = () => {
               </h2>
             </div>
             <div className="relative z-10 mt-2 flex flex-col sm:flex-row gap-4">
-              <button className="flex cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-[#0d1b12] text-base font-bold leading-normal tracking-[0.015em] shadow-lg transition-transform hover:scale-105">
+              <Link to="/contact" className="flex cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-[#0d1b12] text-base font-bold leading-normal tracking-[0.015em] shadow-lg transition-transform hover:scale-105">
                 <span>Write a Review</span>
-              </button>
-              <button className="flex cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white text-base font-bold leading-normal tracking-[0.015em] border border-white/40 transition-colors">
+              </Link>
+              <Link to="/services" className="flex cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white text-base font-bold leading-normal tracking-[0.015em] border border-white/40 transition-colors">
                 <span>View Services</span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -75,23 +76,22 @@ const Testimonials: React.FC = () => {
             <h3 className="text-lg font-bold mb-4">Overall Rating</h3>
             <div className="flex flex-col gap-4">
               <div className="flex items-end gap-3">
-                <span className="text-5xl font-black tracking-tight text-text-light dark:text-white">4.9</span>
+                <span className="text-5xl font-black tracking-tight text-text-light dark:text-white">5.0</span>
                 <div className="flex flex-col mb-1">
                   <div className="flex text-primary">
-                    {[1,2,3,4].map(i => <span key={i} className="material-symbols-outlined text-[24px] fill-current" style={{fontVariationSettings: "'FILL' 1"}}>star</span>)}
-                    <span className="material-symbols-outlined text-[24px] fill-current" style={{fontVariationSettings: "'FILL' 1"}}>star_half</span>
+                    {[1,2,3,4,5].map(i => <span key={i} className="material-symbols-outlined text-[24px] fill-current" style={{fontVariationSettings: "'FILL' 1"}}>star</span>)}
                   </div>
-                  <span className="text-sm text-secondary-text-light dark:text-secondary-text-dark">Based on 124 reviews</span>
+                  <span className="text-sm text-secondary-text-light dark:text-secondary-text-dark">Based on 6 reviews</span>
                 </div>
               </div>
               <div className="w-full h-px bg-border-light dark:bg-border-dark my-2"></div>
               {/* Bars */}
               <div className="grid grid-cols-[20px_1fr_40px] items-center gap-y-3 text-sm">
                 {[
-                  {star: 5, pct: 92},
-                  {star: 4, pct: 5},
-                  {star: 3, pct: 2},
-                  {star: 2, pct: 1},
+                  {star: 5, pct: 100},
+                  {star: 4, pct: 0},
+                  {star: 3, pct: 0},
+                  {star: 2, pct: 0},
                   {star: 1, pct: 0}
                 ].map((row) => (
                   <React.Fragment key={row.star}>
@@ -141,13 +141,13 @@ const Testimonials: React.FC = () => {
                {[1,2,3,4,5].map(i => <span key={i} className="material-symbols-outlined fill-current" style={{fontVariationSettings: "'FILL' 1"}}>star</span>)}
             </div>
             <h4 className="text-xl md:text-2xl font-bold leading-relaxed mb-4 text-text-light dark:text-white">
-              "Artistic Lawn Design is incredibly dependable. The crew shows up on time every week like clockwork. My lawn has never looked better! They handle everything from mowing to edging with absolute precision."
+              "Johnny does excellent work, fair pricing and very dependable. He does our private home and also our condo association. Thanks Johnny"
             </h4>
             <div className="flex items-center gap-4">
-              <div className="size-12 rounded-full bg-gray-200 bg-cover bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCB9HbtJErpxEVFoWfaXsd7zwXjAgxfjnRQKAecNYVOqLyqzJMgg-gRjqTk2hkG2Aqf8LxtWvzCeLQ24xKvEmT2nfttUa3_h17r18O6xv2rf778DoEn7b4WBcp2TQgiUPMwLVqbFYyggsLYUcQKk8-txOqlXe9Ar3fXdpiwo-iSuJpSD09UshXurOLZwesA2n3OlgkljlcZRFiFZG0B6rt5yshvNIankjjJ575liwq77Tx_dEb_lZbrpgBNEG36yleuGa6o1YefVY0m")'}}></div>
+              <div className="bg-primary/20 text-primary rounded-full size-12 flex items-center justify-center font-bold text-xl">D</div>
               <div>
-                <p className="font-bold text-text-light dark:text-white">Sarah Jenkins</p>
-                <p className="text-sm text-secondary-text-light dark:text-secondary-text-dark">Cape Coral Resident • Lawn Care</p>
+                <p className="font-bold text-text-light dark:text-white">Douglas Toms</p>
+                <p className="text-sm text-secondary-text-light dark:text-secondary-text-dark">Cape Coral Resident • Local Guide</p>
               </div>
             </div>
           </div>
@@ -161,7 +161,7 @@ const Testimonials: React.FC = () => {
             <div key={i} className="bg-white dark:bg-card-dark p-6 rounded-xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-3">
-                  <div className="size-10 rounded-full bg-gray-200 bg-cover bg-center" style={{backgroundImage: `url("${review.avatar}")`}}></div>
+                  <div className="bg-primary/20 text-primary rounded-full size-10 flex items-center justify-center font-bold text-base">{review.initial}</div>
                   <div>
                     <p className="text-sm font-bold text-text-light dark:text-white">{review.name}</p>
                     <p className="text-xs text-secondary-text-light dark:text-secondary-text-dark">{review.date}</p>
@@ -193,12 +193,12 @@ const Testimonials: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-black text-text-light dark:text-white">Ready to Transform Your Lawn?</h2>
             <p className="text-lg text-secondary-text-light dark:text-secondary-text-dark">Join hundreds of satisfied neighbors in Cape Coral who trust us with their landscape.</p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
-              <button className="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary-hover text-[#0d1b12] text-lg font-bold shadow-lg transition-transform hover:scale-105">
+              <Link to="/contact" className="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary-hover text-[#0d1b12] text-lg font-bold shadow-lg transition-transform hover:scale-105">
                 Get a Free Quote
-              </button>
-              <button className="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-card-dark border border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-gray-800 text-text-light dark:text-white text-lg font-bold transition-colors">
-                Call (239) 555-0199
-              </button>
+              </Link>
+              <a href="tel:+12396997323" className="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-card-dark border border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-gray-800 text-text-light dark:text-white text-lg font-bold transition-colors">
+                Call (239) 699-7323
+              </a>
             </div>
           </div>
         </div>

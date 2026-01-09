@@ -65,12 +65,12 @@ const Services: React.FC = () => {
 
             <div className="group flex flex-col gap-4 p-6 rounded-xl bg-white dark:bg-[#1a2e22] border border-border-light dark:border-[#2a4533] hover:border-primary dark:hover:border-primary transition-colors shadow-sm hover:shadow-md">
               <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#0d1b12] transition-colors">
-                <span className="material-symbols-outlined text-3xl">landscape</span>
+                <span className="material-symbols-outlined text-3xl">apartment</span>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-text-light dark:text-white text-xl font-bold">Landscape Design</h3>
+                <h3 className="text-text-light dark:text-white text-xl font-bold">HOA & Commercial</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                  Custom softscaping, flower bed installation, and redesigns that enhance your curb appeal and property value.
+                   Reliable maintenance for condo associations and commercial properties. We keep your community areas inviting and well-kept.
                 </p>
               </div>
             </div>
@@ -179,9 +179,9 @@ const Services: React.FC = () => {
             <Link to="/contact" className="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-primary-hover transition-colors text-[#0d1b12] text-base font-bold leading-normal tracking-[0.015em]">
               Get a Quote
             </Link>
-            <Link to="/contact" className="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-transparent border-2 border-white hover:bg-white/10 transition-colors text-white text-base font-bold leading-normal tracking-[0.015em]">
-              Call (239) 555-0123
-            </Link>
+            <a href="tel:+12396997323" className="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-transparent border-2 border-white hover:bg-white/10 transition-colors text-white text-base font-bold leading-normal tracking-[0.015em]">
+              Call (239) 699-7323
+            </a>
           </div>
         </div>
       </section>

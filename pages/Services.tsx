@@ -32,64 +32,76 @@ const Services: React.FC = () => {
           {/* Headline Text */}
           <div className="text-center max-w-[800px] mx-auto">
             <h2 className="text-text-light dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight mb-4">Comprehensive Lawn Care Solutions</h2>
-            <p className="text-gray-600 dark:text-gray-300 text-lg">
+            <p className="text-secondary-text-light dark:text-secondary-text-dark text-lg">
               We offer a full range of services to keep your property looking pristine year-round. From routine maintenance to complex landscape redesigns.
             </p>
           </div>
 
           {/* General Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group flex flex-col gap-4 p-6 rounded-xl bg-white dark:bg-[#1a2e22] border border-border-light dark:border-[#2a4533] hover:border-primary dark:hover:border-primary transition-colors shadow-sm hover:shadow-md">
+            <Link to="/contact?service=maintenance" className="group flex flex-col gap-4 p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark hover:border-primary dark:hover:border-primary transition-all shadow-sm hover:shadow-glow cursor-pointer">
               <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#0d1b12] transition-colors">
                 <span className="material-symbols-outlined text-3xl">grass</span>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-text-light dark:text-white text-xl font-bold">Lawn Maintenance</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-text-light dark:text-white text-xl font-bold group-hover:text-primary transition-colors">Lawn Maintenance</h3>
+                  <span className="material-symbols-outlined text-gray-400 group-hover:translate-x-1 transition-transform opacity-0 group-hover:opacity-100">arrow_forward</span>
+                </div>
+                <p className="text-secondary-text-light dark:text-secondary-text-dark text-sm leading-relaxed">
                   Weekly mowing, precise edging, and thorough blowing to ensure your property maintains a neat, professional appearance.
                 </p>
               </div>
-            </div>
+            </Link>
 
-             <div className="group flex flex-col gap-4 p-6 rounded-xl bg-white dark:bg-[#1a2e22] border border-border-light dark:border-[#2a4533] hover:border-primary dark:hover:border-primary transition-colors shadow-sm hover:shadow-md">
+             <Link to="/contact?service=other" className="group flex flex-col gap-4 p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark hover:border-primary dark:hover:border-primary transition-all shadow-sm hover:shadow-glow cursor-pointer">
               <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#0d1b12] transition-colors">
                 <span className="material-symbols-outlined text-3xl">park</span>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-text-light dark:text-white text-xl font-bold">Tree Care</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-text-light dark:text-white text-xl font-bold group-hover:text-primary transition-colors">Tree Care</h3>
+                  <span className="material-symbols-outlined text-gray-400 group-hover:translate-x-1 transition-transform opacity-0 group-hover:opacity-100">arrow_forward</span>
+                </div>
+                <p className="text-secondary-text-light dark:text-secondary-text-dark text-sm leading-relaxed">
                   Professional trimming, safe removal, and stump grinding. We ensure your trees are healthy and safe for your home.
                 </p>
               </div>
-            </div>
+            </Link>
 
-            <div className="group flex flex-col gap-4 p-6 rounded-xl bg-white dark:bg-[#1a2e22] border border-border-light dark:border-[#2a4533] hover:border-primary dark:hover:border-primary transition-colors shadow-sm hover:shadow-md">
+            <Link to="/contact?service=commercial" className="group flex flex-col gap-4 p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark hover:border-primary dark:hover:border-primary transition-all shadow-sm hover:shadow-glow cursor-pointer">
               <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#0d1b12] transition-colors">
                 <span className="material-symbols-outlined text-3xl">apartment</span>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-text-light dark:text-white text-xl font-bold">HOA & Commercial</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                 <div className="flex items-center justify-between">
+                  <h3 className="text-text-light dark:text-white text-xl font-bold group-hover:text-primary transition-colors">HOA & Commercial</h3>
+                  <span className="material-symbols-outlined text-gray-400 group-hover:translate-x-1 transition-transform opacity-0 group-hover:opacity-100">arrow_forward</span>
+                </div>
+                <p className="text-secondary-text-light dark:text-secondary-text-dark text-sm leading-relaxed">
                    Reliable maintenance for condo associations and commercial properties. We keep your community areas inviting and well-kept.
                 </p>
               </div>
-            </div>
+            </Link>
 
-             <div className="group flex flex-col gap-4 p-6 rounded-xl bg-white dark:bg-[#1a2e22] border border-border-light dark:border-[#2a4533] hover:border-primary dark:hover:border-primary transition-colors shadow-sm hover:shadow-md">
+             <Link to="/contact?service=maintenance" className="group flex flex-col gap-4 p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark hover:border-primary dark:hover:border-primary transition-all shadow-sm hover:shadow-glow cursor-pointer">
               <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#0d1b12] transition-colors">
                 <span className="material-symbols-outlined text-3xl">water_drop</span>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-text-light dark:text-white text-xl font-bold">Fertilization</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-text-light dark:text-white text-xl font-bold group-hover:text-primary transition-colors">Fertilization</h3>
+                  <span className="material-symbols-outlined text-gray-400 group-hover:translate-x-1 transition-transform opacity-0 group-hover:opacity-100">arrow_forward</span>
+                </div>
+                <p className="text-secondary-text-light dark:text-secondary-text-dark text-sm leading-relaxed">
                   Targeted weed control and seasonal feeding programs designed for Florida's climate to promote lush, green growth.
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Specialty Spotlight Feature */}
-          <div className="bg-[#102216] rounded-2xl overflow-hidden shadow-xl">
+          <div className="bg-surface-dark rounded-2xl overflow-hidden shadow-xl border border-border-dark">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center gap-6">
                 <div className="flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-sm">
@@ -132,34 +144,34 @@ const Services: React.FC = () => {
           <div className="flex flex-col gap-10">
             <div className="text-center mb-4">
               <h2 className="text-text-light dark:text-white tracking-tight text-3xl font-bold">How It Works</h2>
-              <p className="text-gray-600 dark:text-gray-400 mt-2">Our simple process to get your lawn looking its best.</p>
+              <p className="text-secondary-text-light dark:text-secondary-text-dark mt-2">Our simple process to get your lawn looking its best.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-              <div className="hidden md:block absolute top-[24px] left-[16%] right-[16%] h-[2px] bg-gray-200 dark:bg-gray-700 -z-10"></div>
+              <div className="hidden md:block absolute top-[24px] left-[16%] right-[16%] h-[2px] bg-gray-200 dark:bg-border-dark -z-10"></div>
               <div className="flex flex-col items-center text-center gap-4">
-                <div className="size-12 rounded-full bg-white dark:bg-[#1a2e22] border-2 border-primary flex items-center justify-center text-primary z-10 shadow-sm">
+                <div className="size-12 rounded-full bg-white dark:bg-card-dark border-2 border-primary flex items-center justify-center text-primary z-10 shadow-sm">
                   <span className="material-symbols-outlined">call</span>
                 </div>
                 <h3 className="text-text-light dark:text-white text-lg font-bold">1. Consultation</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm max-w-[250px]">
+                <p className="text-secondary-text-light dark:text-secondary-text-dark text-sm max-w-[250px]">
                   Contact us for a free estimate. We discuss your needs and assess your property.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center gap-4">
-                <div className="size-12 rounded-full bg-white dark:bg-[#1a2e22] border-2 border-primary flex items-center justify-center text-primary z-10 shadow-sm">
+                <div className="size-12 rounded-full bg-white dark:bg-card-dark border-2 border-primary flex items-center justify-center text-primary z-10 shadow-sm">
                   <span className="material-symbols-outlined">design_services</span>
                 </div>
                 <h3 className="text-text-light dark:text-white text-lg font-bold">2. Plan & Schedule</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm max-w-[250px]">
+                <p className="text-secondary-text-light dark:text-secondary-text-dark text-sm max-w-[250px]">
                   We propose a customized plan and set a schedule that works best for you.
                 </p>
               </div>
                <div className="flex flex-col items-center text-center gap-4">
-                <div className="size-12 rounded-full bg-white dark:bg-[#1a2e22] border-2 border-primary flex items-center justify-center text-primary z-10 shadow-sm">
+                <div className="size-12 rounded-full bg-white dark:bg-card-dark border-2 border-primary flex items-center justify-center text-primary z-10 shadow-sm">
                   <span className="material-symbols-outlined">check</span>
                 </div>
                 <h3 className="text-text-light dark:text-white text-lg font-bold">3. Execution</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm max-w-[250px]">
+                <p className="text-secondary-text-light dark:text-secondary-text-dark text-sm max-w-[250px]">
                   Our team arrives on time and delivers high-quality, professional service.
                 </p>
               </div>
@@ -169,7 +181,7 @@ const Services: React.FC = () => {
       </main>
 
        {/* Footer CTA */}
-      <section className="w-full bg-[#102216] py-16 px-4">
+      <section className="w-full bg-surface-dark border-t border-border-dark py-16 px-4">
         <div className="max-w-[1280px] mx-auto flex flex-col items-center text-center gap-6">
           <h2 className="text-white text-3xl md:text-5xl font-black">Ready for the best lawn on the block?</h2>
           <p className="text-gray-300 text-lg max-w-2xl">

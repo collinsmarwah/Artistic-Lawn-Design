@@ -113,10 +113,20 @@ const categories = ["All Projects", "Lawn Care", "Shrub Sculpting", "Hardscaping
 
 const Portfolio: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All Projects");
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
 
   const filteredItems = activeCategory === "All Projects" 
     ? portfolioData 
     : portfolioData.filter(item => item.category === activeCategory);
+
+  const displayItems = filteredItems.slice(0, visibleCount);
+
+  const handleLoadMore = () => {
+    setVisibleCount(prev => prev + 6);
+  };
+
+  const hasMore = visibleCount < filteredItems.length;
 
   return (
     <main className="flex-grow w-full max-w-[1280px] mx-auto px-4 sm:px-10 py-8 sm:py-12">
@@ -138,7 +148,7 @@ const Portfolio: React.FC = () => {
         {categories.map(category => (
           <button
             key={category}
-            onClick={() => setActiveCategory(category)}
+            onClick={() => { setActiveCategory(category); setVisibleCount(6); }}
             className={`flex shrink-0 items-center justify-center px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm ${
               activeCategory === category
                 ? "bg-primary text-[#0d1b12] shadow-md ring-2 ring-transparent ring-offset-2 dark:ring-offset-background-dark"
@@ -151,8 +161,12 @@ const Portfolio: React.FC = () => {
       </div>
 
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-        {filteredItems.map(item => (
-          <div key={item.id} className="group relative break-inside-avoid rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer">
+        {displayItems.map(item => (
+          <div 
+            key={item.id} 
+            onClick={() => setSelectedItem(item)}
+            className="group relative break-inside-avoid rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+          >
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
               <span className="text-primary text-xs font-bold uppercase tracking-wider mb-1">{item.category}</span>
               <h3 className="text-white text-xl font-bold">{item.title}</h3>
@@ -160,18 +174,58 @@ const Portfolio: React.FC = () => {
                 <span className="material-symbols-outlined text-[16px]">location_on</span>
                 <span>{item.location}</span>
               </div>
+              <div className="mt-4 flex items-center text-xs font-bold text-white/80 uppercase tracking-widest gap-1">
+                <span className="material-symbols-outlined text-sm">zoom_in</span>
+                View Details
+              </div>
             </div>
             <img src={item.image} alt={item.title} className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
         ))}
       </div>
       
-       <div className="mt-12 flex justify-center">
-        <button className="flex items-center gap-2 text-gray-500 dark:text-gray-400 font-medium hover:text-primary transition-colors">
-          <span>View More Projects</span>
-          <span className="material-symbols-outlined">arrow_downward</span>
-        </button>
-      </div>
+      {hasMore && (
+        <div className="mt-12 flex justify-center">
+          <button 
+            onClick={handleLoadMore}
+            className="flex items-center gap-2 text-gray-500 dark:text-gray-400 font-medium hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-card-dark"
+          >
+            <span>View More Projects</span>
+            <span className="material-symbols-outlined">arrow_downward</span>
+          </button>
+        </div>
+      )}
+
+      {/* Lightbox Modal */}
+      {selectedItem && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 animate-in fade-in duration-200" onClick={() => setSelectedItem(null)}>
+          <button className="absolute top-4 right-4 text-white hover:text-primary transition-colors">
+            <span className="material-symbols-outlined text-4xl">close</span>
+          </button>
+          
+          <div className="relative w-full max-w-5xl max-h-[90vh] flex flex-col rounded-xl overflow-hidden bg-background-dark animate-in zoom-in-95 duration-200" onClick={(e) => e.stopPropagation()}>
+            <div className="relative flex-1 overflow-hidden bg-black flex items-center justify-center">
+              <img src={selectedItem.image} alt={selectedItem.title} className="max-w-full max-h-[70vh] object-contain" />
+            </div>
+            <div className="p-6 bg-white dark:bg-card-dark border-t border-border-light dark:border-border-dark flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div>
+                <span className="text-primary text-xs font-bold uppercase tracking-wider">{selectedItem.category}</span>
+                <h2 className="text-2xl font-black text-text-light dark:text-white mt-1">{selectedItem.title}</h2>
+                <div className="flex items-center gap-2 mt-1 text-secondary-text-light dark:text-gray-400">
+                  <span className="material-symbols-outlined text-[18px]">location_on</span>
+                  <span>{selectedItem.location}</span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setSelectedItem(null)}
+                className="px-6 py-2 bg-primary text-[#0d1b12] font-bold rounded-lg hover:bg-primary-hover transition-colors"
+              >
+                Close View
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 };

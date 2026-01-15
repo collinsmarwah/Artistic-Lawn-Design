@@ -26,20 +26,24 @@
             colors: {
               primary: "#13ec5b",
               "primary-hover": "#10c94d",
-              "background-light": "#f6f8f6",
-              "background-dark": "#102216",
-              "text-light": "#0d1b12",
-              "text-dark": "#e7f3eb",
-              "secondary-text-light": "#4c9a66",
-              "secondary-text-dark": "#9abf9b",
-              "border-light": "#e7f3eb",
-              "border-dark": "#2a4a35",
+              "background-light": "#f8fafc",
+              "background-dark": "#020403", // Deep, rich black-green
+              "text-light": "#0f172a",
+              "text-dark": "#f0fdf4",
+              "secondary-text-light": "#475569",
+              "secondary-text-dark": "#94a3b8",
+              "border-light": "#e2e8f0",
+              "border-dark": "#14251b", // Subtle border
               "card-light": "#ffffff",
-              "card-dark": "#1a2e22",
+              "card-dark": "#0b120e", // Slightly elevated surface
+              "surface-dark": "#111c16", // Higher elevation surface
             },
             fontFamily: {
               display: ["Inter", "sans-serif"],
             },
+            boxShadow: {
+              'glow': '0 0 20px -5px rgba(19, 236, 91, 0.15)',
+            }
           },
         },
       };
@@ -56,19 +60,22 @@
         scrollbar-width: none;
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.36.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
   <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased transition-colors duration-200">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

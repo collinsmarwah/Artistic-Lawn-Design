@@ -1,46 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const reviews = [
+const allReviews = [
   {
     name: "William Fike",
     date: "8 months ago",
     text: "Johnny has been providing with lawn service for my house and my neighbors house for years. I am always completely satisfied with with his crew's work. Whether it is just cutting the grass or trimming trees, he is prompt, affordable, and professional.",
-    initial: "W"
+    initial: "W",
+    category: "Lawn Care"
   },
   {
     name: "Douglas Toms",
     date: "4 years ago",
     text: "Johnny does excellent work, fair pricing and very dependable. He does our private home and also our condo association. Thanks Johnny",
-    initial: "D"
+    initial: "D",
+    category: "Maintenance"
   },
   {
     name: "Darlene Long",
     date: "1 year ago",
     text: "Dependable, fair. Stuck with me when I was getting credit card hacked. Good company",
-    initial: "D"
+    initial: "D",
+    category: "Lawn Care"
   },
   {
-    name: "Cape Coral Resident",
-    date: "2 years ago",
-    text: "Review rated 5 stars.",
-    initial: "C"
+    name: "Michael R.",
+    date: "2 months ago",
+    text: "They did an amazing job with our landscape redesign. The native plants they selected look beautiful and require much less water.",
+    initial: "M",
+    category: "Landscaping"
   },
   {
-    name: "Cape Coral Resident",
-    date: "3 years ago",
-    text: "Review rated 5 stars.",
-    initial: "C"
+    name: "Sarah Jenkins",
+    date: "5 months ago",
+    text: "Best lawn service in Cape Coral hands down. They always show up on schedule and leave the yard looking spotless.",
+    initial: "S",
+    category: "Maintenance"
   },
   {
-    name: "Cape Coral Resident",
-    date: "3 years ago",
-    text: "Review rated 5 stars.",
-    initial: "C"
+    name: "Robert P.",
+    date: "1 year ago",
+    text: "Very professional team. They handled a large tree removal for us safely and ground the stump down perfectly.",
+    initial: "R",
+    category: "Landscaping"
   }
 ];
 
 const Testimonials: React.FC = () => {
+  const [filter, setFilter] = useState('All Reviews');
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  const filteredReviews = filter === 'All Reviews' 
+    ? allReviews 
+    : allReviews.filter(r => r.category === filter);
+
+  const displayReviews = filteredReviews.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredReviews.length;
+
+  const handleLoadMore = () => {
+    setVisibleCount(prev => prev + 3);
+  };
+
+  const handleFilterChange = (newFilter: string) => {
+    setFilter(newFilter);
+    setVisibleCount(3);
+  };
+
   return (
     <div className="flex flex-col flex-grow">
       {/* Hero Section */}
@@ -81,7 +106,7 @@ const Testimonials: React.FC = () => {
                   <div className="flex text-primary">
                     {[1,2,3,4,5].map(i => <span key={i} className="material-symbols-outlined text-[24px] fill-current" style={{fontVariationSettings: "'FILL' 1"}}>star</span>)}
                   </div>
-                  <span className="text-sm text-secondary-text-light dark:text-secondary-text-dark">Based on 6 reviews</span>
+                  <span className="text-sm text-secondary-text-light dark:text-secondary-text-dark">Based on {allReviews.length} reviews</span>
                 </div>
               </div>
               <div className="w-full h-px bg-border-light dark:bg-border-dark my-2"></div>
@@ -113,15 +138,30 @@ const Testimonials: React.FC = () => {
               <p className="text-secondary-text-light dark:text-secondary-text-dark">Discover what your neighbors are saying about our services.</p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <button className="flex h-9 items-center justify-center gap-x-2 rounded-full bg-text-light dark:bg-white px-5 shadow-sm transition-transform hover:scale-105">
-                <span className="text-white dark:text-black text-sm font-medium">All Reviews</span>
+              <button 
+                onClick={() => handleFilterChange('All Reviews')}
+                className={`flex h-9 items-center justify-center gap-x-2 rounded-full px-5 shadow-sm transition-transform hover:scale-105 ${
+                  filter === 'All Reviews' 
+                    ? 'bg-text-light dark:bg-white text-white dark:text-black font-medium' 
+                    : 'bg-white dark:bg-card-dark border border-border-light dark:border-border-dark text-text-light dark:text-white hover:border-primary'
+                }`}
+              >
+                All Reviews
               </button>
-              {['Lawn Care', 'Landscaping', 'Maintenance'].map(filter => (
-                 <button key={filter} className="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-border-light dark:border-border-dark px-5 hover:border-primary dark:hover:border-primary transition-colors">
-                  <span className="text-text-light dark:text-white text-sm font-medium">{filter}</span>
+              {['Lawn Care', 'Landscaping', 'Maintenance'].map(f => (
+                 <button 
+                    key={f} 
+                    onClick={() => handleFilterChange(f)}
+                    className={`flex h-9 items-center justify-center gap-x-2 rounded-full px-5 transition-colors border ${
+                      filter === f
+                        ? 'bg-primary text-[#0d1b12] border-primary font-bold'
+                        : 'bg-white dark:bg-card-dark border-border-light dark:border-border-dark text-text-light dark:text-white hover:border-primary dark:hover:border-primary'
+                    }`}
+                  >
+                  <span className="text-sm font-medium">{f}</span>
                 </button>
               ))}
-              <button className="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-border-light dark:border-border-dark px-5 hover:border-primary dark:hover:border-primary transition-colors ml-auto">
+              <button className="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-border-light dark:border-border-dark px-5 hover:border-primary dark:hover:border-primary transition-colors ml-auto cursor-default">
                 <span className="material-symbols-outlined text-base">sort</span>
                 <span className="text-text-light dark:text-white text-sm font-medium">Newest</span>
               </button>
@@ -157,8 +197,8 @@ const Testimonials: React.FC = () => {
       {/* Reviews Grid */}
       <section className="px-4 md:px-10 py-6 pb-20 max-w-[1280px] mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reviews.map((review, i) => (
-            <div key={i} className="bg-white dark:bg-card-dark p-6 rounded-xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
+          {displayReviews.map((review, i) => (
+            <div key={i} className="bg-white dark:bg-card-dark p-6 rounded-xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4 animate-in fade-in zoom-in-95 duration-300">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-3">
                   <div className="bg-primary/20 text-primary rounded-full size-10 flex items-center justify-center font-bold text-base">{review.initial}</div>
@@ -167,7 +207,10 @@ const Testimonials: React.FC = () => {
                     <p className="text-xs text-secondary-text-light dark:text-secondary-text-dark">{review.date}</p>
                   </div>
                 </div>
-                <span className="material-symbols-outlined text-primary/30">verified</span>
+                <div className="flex flex-col items-end">
+                   <span className="material-symbols-outlined text-primary/30">verified</span>
+                   <span className="text-[10px] font-bold text-primary uppercase tracking-wider mt-1 bg-primary/10 px-1.5 py-0.5 rounded">{review.category}</span>
+                </div>
               </div>
               <div className="flex gap-0.5 text-primary">
                  {[1,2,3,4,5].map(star => <span key={star} className="material-symbols-outlined text-[20px] fill-current" style={{fontVariationSettings: "'FILL' 1"}}>star</span>)}
@@ -178,12 +221,18 @@ const Testimonials: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-12">
-          <button className="flex items-center gap-2 text-text-light dark:text-white font-bold border border-border-light dark:border-border-dark bg-white dark:bg-card-dark px-6 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-            <span>Load More Reviews</span>
-            <span className="material-symbols-outlined">expand_more</span>
-          </button>
-        </div>
+        
+        {hasMore && (
+            <div className="flex justify-center mt-12">
+              <button 
+                onClick={handleLoadMore}
+                className="flex items-center gap-2 text-text-light dark:text-white font-bold border border-border-light dark:border-border-dark bg-white dark:bg-card-dark px-6 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              >
+                <span>Load More Reviews</span>
+                <span className="material-symbols-outlined">expand_more</span>
+              </button>
+            </div>
+        )}
       </section>
 
        {/* CTA Footer */}

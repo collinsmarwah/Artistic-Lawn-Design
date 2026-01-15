@@ -89,7 +89,7 @@ const Chatbot: React.FC = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-[100] flex flex-col w-[350px] max-w-[calc(100vw-48px)] h-[500px] max-h-[calc(100vh-100px)] bg-white dark:bg-[#1a2e22] rounded-2xl shadow-2xl overflow-hidden border border-border-light dark:border-border-dark animate-in slide-in-from-bottom-10 fade-in duration-200">
+        <div className="fixed bottom-6 right-6 z-[100] flex flex-col w-[350px] max-w-[calc(100vw-48px)] h-[500px] max-h-[calc(100vh-100px)] bg-white dark:bg-card-dark rounded-2xl shadow-2xl overflow-hidden border border-border-light dark:border-border-dark animate-in slide-in-from-bottom-10 fade-in duration-200">
           
           {/* Header */}
           <div className="bg-primary p-4 flex items-center justify-between text-[#0d1b12]">
@@ -117,7 +117,7 @@ const Chatbot: React.FC = () => {
                 <div className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                   msg.role === 'user' 
                     ? 'bg-primary text-[#0d1b12] rounded-tr-none' 
-                    : 'bg-white dark:bg-[#1a2e22] text-text-light dark:text-white border border-border-light dark:border-border-dark rounded-tl-none shadow-sm'
+                    : 'bg-white dark:bg-card-dark text-text-light dark:text-white border border-border-light dark:border-border-dark rounded-tl-none shadow-sm'
                 }`}>
                   {msg.text}
                 </div>
@@ -125,7 +125,7 @@ const Chatbot: React.FC = () => {
             ))}
             {isLoading && (
                <div className="flex justify-start">
-                <div className="bg-white dark:bg-[#1a2e22] rounded-2xl rounded-tl-none px-4 py-3 border border-border-light dark:border-border-dark shadow-sm">
+                <div className="bg-white dark:bg-card-dark rounded-2xl rounded-tl-none px-4 py-3 border border-border-light dark:border-border-dark shadow-sm">
                   <div className="flex gap-1">
                     <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
                     <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
@@ -138,7 +138,7 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Input */}
-          <form onSubmit={handleSendMessage} className="p-4 bg-white dark:bg-[#1a2e22] border-t border-border-light dark:border-border-dark flex gap-2">
+          <form onSubmit={handleSendMessage} className="p-4 bg-white dark:bg-card-dark border-t border-border-light dark:border-border-dark flex gap-2">
             <input
               type="text"
               value={inputText}

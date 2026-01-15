@@ -8,7 +8,7 @@ const Home: React.FC = () => {
       <div className="w-full flex justify-center py-5 px-4 md:px-10">
         <div className="w-full max-w-[1280px]">
           <div className="@container">
-            <div className="relative flex min-h-[560px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 md:p-16 overflow-hidden shadow-2xl" 
+            <div className="relative flex min-h-[560px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 md:p-16 overflow-hidden shadow-2xl border border-transparent dark:border-border-dark" 
                  style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://res.cloudinary.com/dldtmvsow/image/upload/v1767970646/481993189_1090906752837516_3754865196813272728_n_ewttup.jpg")'}}>
               <div className="flex flex-col gap-4 text-center max-w-[800px] z-10">
                 <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em]">
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Services Section */}
-      <div className="w-full flex justify-center py-12 md:py-20 px-4 md:px-10 bg-white dark:bg-[#152a1d]">
+      <div className="w-full flex justify-center py-12 md:py-20 px-4 md:px-10">
         <div className="w-full max-w-[1280px] flex flex-col gap-10">
           <div className="flex flex-col gap-4 text-center md:text-left">
             <h2 className="text-primary font-bold text-sm uppercase tracking-wider">Our Services</h2>
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
             </h1>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link to="/services" className="group flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <Link to="/services" className="group flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
               <div className="size-12 rounded-lg bg-primary/20 dark:bg-primary/10 text-primary flex items-center justify-center">
                 <span className="material-symbols-outlined text-3xl">content_cut</span>
               </div>
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
                 </p>
               </div>
             </Link>
-            <Link to="/services" className="group flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <Link to="/services" className="group flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
               <div className="size-12 rounded-lg bg-primary/20 dark:bg-primary/10 text-primary flex items-center justify-center">
                 <span className="material-symbols-outlined text-3xl">yard</span>
               </div>
@@ -64,7 +64,7 @@ const Home: React.FC = () => {
                 </p>
               </div>
             </Link>
-            <Link to="/services" className="group flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <Link to="/services" className="group flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-6 hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
               <div className="size-12 rounded-lg bg-primary/20 dark:bg-primary/10 text-primary flex items-center justify-center">
                 <span className="material-symbols-outlined text-3xl">deck</span>
               </div>
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Why Choose Us */}
-      <div className="w-full flex justify-center py-12 md:py-20 px-4 md:px-10">
+      <div className="w-full flex justify-center py-12 md:py-20 px-4 md:px-10 bg-white/50 dark:bg-surface-dark/30">
         <div className="w-full max-w-[1280px]">
           <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-16 items-center">
             <div className="w-full md:w-1/2 flex flex-col gap-6">
@@ -124,10 +124,10 @@ const Home: React.FC = () => {
               </Link>
             </div>
             <div className="w-full md:w-1/2">
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-transparent dark:border-border-dark">
                 <div className="w-full h-full bg-cover bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQyLDcz7EfCAHdAmfKMMfY_ddFQqWTDKiK_2ZwgEsDRQyoutY50uWhenM6l0YMge7TrgHdwpq9CdQWaHLkeXzQQMvCO2EghhKcoRULRe2mxKES80Hc_TUTzEhBPP-RKT0vH6kaGEm4AcE-HHl3YLNJvxua6JyEHLucCFnOpaGpIksVyShHk5t-a_iRHsLYZn12GTjc3eGema71sowyjlOoAPBNiN5799yUKm7fQRfcpXJhLSc5ehIVlPWzqLzLSUIT-QYDYa39Nfz6")'}}>
                 </div>
-                <div className="absolute bottom-6 left-6 bg-white dark:bg-background-dark p-4 rounded-xl shadow-lg flex items-center gap-3 max-w-[240px]">
+                <div className="absolute bottom-6 left-6 bg-white dark:bg-surface-dark p-4 rounded-xl shadow-lg border border-transparent dark:border-border-dark flex items-center gap-3 max-w-[240px]">
                   <div className="bg-primary/20 p-2 rounded-full text-primary">
                     <span className="material-symbols-outlined">reviews</span>
                   </div>
@@ -143,11 +143,11 @@ const Home: React.FC = () => {
       </div>
 
       {/* Reviews Section */}
-      <div className="w-full flex justify-center py-16 px-4 md:px-10 bg-white dark:bg-[#152a1d]">
+      <div className="w-full flex justify-center py-16 px-4 md:px-10">
         <div className="w-full max-w-[1280px]">
           <h2 className="text-center text-3xl font-bold text-text-light dark:text-text-dark mb-12">What Our Neighbors Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex flex-col gap-4 p-6 rounded-xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+            <div className="flex flex-col gap-4 p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark hover:border-primary/50 dark:hover:border-primary/50 transition-colors">
               <div className="flex items-center gap-3">
                 <div className="bg-primary/20 text-primary rounded-full size-12 flex items-center justify-center font-bold text-xl">W</div>
                 <div className="flex-1">
@@ -161,7 +161,7 @@ const Home: React.FC = () => {
               <p className="text-text-light dark:text-text-dark text-sm leading-relaxed">"Johnny has been providing with lawn service for my house and my neighbors house for years. I am always completely satisfied with with his crew's work. Whether it is just cutting the grass or trimming trees, he is prompt, affordable, and professional."</p>
             </div>
             
-             <div className="flex flex-col gap-4 p-6 rounded-xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+             <div className="flex flex-col gap-4 p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark hover:border-primary/50 dark:hover:border-primary/50 transition-colors">
               <div className="flex items-center gap-3">
                  <div className="bg-primary/20 text-primary rounded-full size-12 flex items-center justify-center font-bold text-xl">D</div>
                 <div className="flex-1">
@@ -175,7 +175,7 @@ const Home: React.FC = () => {
               <p className="text-text-light dark:text-text-dark text-sm leading-relaxed">"Johnny does excellent work, fair pricing and very dependable. He does our private home and also our condo association. Thanks Johnny"</p>
             </div>
 
-            <div className="flex flex-col gap-4 p-6 rounded-xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+            <div className="flex flex-col gap-4 p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark hover:border-primary/50 dark:hover:border-primary/50 transition-colors">
               <div className="flex items-center gap-3">
                  <div className="bg-primary/20 text-primary rounded-full size-12 flex items-center justify-center font-bold text-xl">D</div>
                 <div className="flex-1">

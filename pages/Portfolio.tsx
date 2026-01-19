@@ -112,13 +112,39 @@ const portfolioData: PortfolioItem[] = [
 const categories = ["All Projects", "Lawn Care", "Shrub Sculpting", "Hardscaping", "Garden Design"];
 
 const Portfolio: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState("All Projects");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(["All Projects"]);
   const [visibleCount, setVisibleCount] = useState(6);
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
 
-  const filteredItems = activeCategory === "All Projects" 
+  const toggleCategory = (category: string) => {
+    setVisibleCount(6); // Reset visible count on filter change
+
+    if (category === "All Projects") {
+      setSelectedCategories(["All Projects"]);
+      return;
+    }
+
+    setSelectedCategories(prev => {
+      // If currently "All Projects", clear it and select the new specific category
+      if (prev.includes("All Projects")) {
+        return [category];
+      }
+
+      // If the category is already selected, toggle it off
+      if (prev.includes(category)) {
+        const newCategories = prev.filter(c => c !== category);
+        // If unselecting leaves us with nothing, revert to "All Projects"
+        return newCategories.length === 0 ? ["All Projects"] : newCategories;
+      } else {
+        // Otherwise add it to the selection
+        return [...prev, category];
+      }
+    });
+  };
+
+  const filteredItems = selectedCategories.includes("All Projects") 
     ? portfolioData 
-    : portfolioData.filter(item => item.category === activeCategory);
+    : portfolioData.filter(item => selectedCategories.includes(item.category));
 
   const displayItems = filteredItems.slice(0, visibleCount);
 
@@ -136,7 +162,7 @@ const Portfolio: React.FC = () => {
             Our Masterpieces
           </h1>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-            Transforming Cape Coral lawns into living art. Explore our curated portfolio of precision lawn care, shrub sculpting, and sustainable landscape design.
+            Transforming Cape Coral lawns into living art. Select categories to explore our curated portfolio of precision lawn care, shrub sculpting, and sustainable landscape design.
           </p>
         </div>
         <div className="hidden md:block pb-2">
@@ -145,19 +171,25 @@ const Portfolio: React.FC = () => {
       </div>
 
       <div className="flex overflow-x-auto pb-4 mb-8 gap-3 no-scrollbar mask-linear">
-        {categories.map(category => (
-          <button
-            key={category}
-            onClick={() => { setActiveCategory(category); setVisibleCount(6); }}
-            className={`flex shrink-0 items-center justify-center px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm ${
-              activeCategory === category
-                ? "bg-primary text-[#0d1b12] shadow-md ring-2 ring-transparent ring-offset-2 dark:ring-offset-background-dark"
-                : "bg-white dark:bg-card-dark text-text-light dark:text-gray-200 border border-border-light dark:border-border-dark hover:bg-primary/20 dark:hover:bg-primary/20"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
+        {categories.map(category => {
+          const isActive = selectedCategories.includes(category);
+          return (
+            <button
+              key={category}
+              onClick={() => toggleCategory(category)}
+              className={`flex shrink-0 items-center justify-center px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm select-none ${
+                isActive
+                  ? "bg-primary text-[#0d1b12] shadow-md ring-2 ring-transparent ring-offset-2 dark:ring-offset-background-dark"
+                  : "bg-white dark:bg-card-dark text-text-light dark:text-gray-200 border border-border-light dark:border-border-dark hover:bg-primary/20 dark:hover:bg-primary/20"
+              }`}
+            >
+              {category}
+              {isActive && category !== "All Projects" && (
+                <span className="ml-2 material-symbols-outlined text-[16px] font-bold">check</span>
+              )}
+            </button>
+          );
+        })}
       </div>
 
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
@@ -165,7 +197,7 @@ const Portfolio: React.FC = () => {
           <div 
             key={item.id} 
             onClick={() => setSelectedItem(item)}
-            className="group relative break-inside-avoid rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+            className="group relative break-inside-avoid rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer animate-in fade-in zoom-in-95"
           >
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
               <span className="text-primary text-xs font-bold uppercase tracking-wider mb-1">{item.category}</span>
@@ -182,6 +214,11 @@ const Portfolio: React.FC = () => {
             <img src={item.image} alt={item.title} className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
         ))}
+        {displayItems.length === 0 && (
+          <div className="col-span-full py-12 text-center text-secondary-text-light dark:text-gray-400">
+             No projects found for the selected categories.
+          </div>
+        )}
       </div>
       
       {hasMore && (
